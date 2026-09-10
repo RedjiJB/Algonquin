@@ -11,7 +11,7 @@ repositories.
 - `experiments/` — temporary experiments and result manifests
 - `federation-fixtures/` — controlled ActivityPub interoperability fixtures
 - `spatial/` — local spatial datasets and captures
-- `runtime-data/` — databases, queues,, logs, queues, and other mutable state
+- `runtime-data/` — databases, queues, logs, and other mutable state
 
 This directory is intentionally not a Git repository. Each product repository's
 ignore rules also exclude common large-artifact formats and runtime-data paths.
