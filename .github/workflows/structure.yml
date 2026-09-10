@@ -1,0 +1,26 @@
+name: Validate monorepo structure
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required ecosystems
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            algonquin-cloud
+            algonquin-ai
+            algonquin-compute-fabric
+            algonquin-media-fabric
+            algonquin-fediverse
+            algonquin-digital-platform
+          )
+          for path in "${required[@]}"; do
+            test -d "$path" || { echo "Missing ecosystem directory: $path"; exit 1; }
+          done

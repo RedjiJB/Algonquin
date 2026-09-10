@@ -1,0 +1,55 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and generated output anywhere in the monorepo
+node_modules/
+.venv/
+venv/
+dist/
+build/
+coverage/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Model weights and other large AI artifacts
+*.gguf
+*.safetensors
+*.ckpt
+*.onnx
+*.bin
+
+# Runtime data and benchmark output
+**/data/
+**/logs/
+**/results/
+*.log
+
+# Local sandbox contents (keep manifests and documentation)
+sandbox/models/*
+!sandbox/models/manifests/
+!sandbox/models/manifests/**
+sandbox/datasets/*
+!sandbox/datasets/manifests/
+!sandbox/datasets/manifests/**
+sandbox/experiments/*
+!sandbox/experiments/results/
+!sandbox/experiments/results/**
+
+# Personal Obsidian session state
+Algonquin/.obsidian/workspace.json
+
+# Recoverable pre-monorepo Git metadata backups
+**/.git.nested-backup-*/
